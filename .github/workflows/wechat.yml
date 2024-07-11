@@ -1,0 +1,40 @@
+name: Docker Installer Download
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 23 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  download_installer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download installers
+      run: |
+         curl -o vx64.apk "https://7bf46b77adc987163f92c4db0a42cb15.dlied1.cdntips.net/dldir1.qq.com/weixin/android/weixin8050android2701_0x2800323e_arm64.apk?mkey=lego_ztc&f=00&sche_type=7&cip=121.232.28.76&proto=https"
+         curl -o vx32.apk "https://b077b2b907965d65f31630304da5ec7b.dlied1.cdntips.net/dldir1.qq.com/weixin/android/weixin8042android2460.apk?mkey=lego_ztc&f=00&sche_type=7&cip=121.232.28.76&proto=https"
+         curl -o WeChatSetup.exe "https://dldir1v6.qq.com/weixin/Windows/WeChatSetup.exe"
+         curl -o WeChatSetup_x86.exe "https://dldir1v6.qq.com/weixin/Windows/WeChatSetup_x86.exe"
+         curl -o WeChatMac.dmg "https://dldir1.qq.com/weixin/mac/WeChatMac.dmg"
+          
+         
+
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          vx64.apk
+          vx32.apk
+          WeChatSetup.exe
+          WeChatSetup_x86.exe
+          WeChatMac.dmg
+          
+          
+        tag_name: wechat-download
