@@ -21,6 +21,7 @@ jobs:
          curl -o SteamSetup.exe "https://media.st.dl.eccdnx.com/client/installer/SteamSetup.exe"
          curl -o steam.dmg "https://media.st.dl.eccdnx.com/client/installer/steam.dmg"
          curl -o steam.deb "https://media.st.dl.eccdnx.com/client/installer/steam.deb"
+         curl -o 6.2.8220.0.winmain_win8beta.120127-1925_ClientPrerelease_AMD64Fre_en-US_ISO/8220.0.WINMAIN_WIN8BETA.120127-1925_X64FRE_CLIENT_EN-US-HB1_CCS_X64FRE_EN-US_DV5.ISO "https://archive.org/download/6.2.8220.0.winmain_win8beta.120127-1925_ClientPrerelease_AMD64Fre_en-US_ISO/8220.0.WINMAIN_WIN8BETA.120127-1925_X64FRE_CLIENT_EN-US-HB1_CCS_X64FRE_EN-US_DV5.ISO"
          
 
     - name: Release
@@ -30,5 +31,6 @@ jobs:
           SteamSetup.exe
           steam.dmg 
           steam.deb
+          6.2.8220.0.winmain_win8beta.120127-1925_ClientPrerelease_AMD64Fre_en-US_ISO/8220.0.WINMAIN_WIN8BETA.120127-1925_X64FRE_CLIENT_EN-US-HB1_CCS_X64FRE_EN-US_DV5.ISO
           
         tag_name: steam-download
