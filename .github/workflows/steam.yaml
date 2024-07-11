@@ -31,4 +31,4 @@ jobs:
           steam.dmg 
           steam.deb
           
-        tag_name: latest
+        tag_name: steam-download
