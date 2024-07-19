@@ -37,4 +37,4 @@ jobs:
           WeChatMac.dmg
           
           
-        tag_name: wechat-download-${{ format('YYYYMMDD-HHmm' }}
+        tag_name: wechat-download-01
