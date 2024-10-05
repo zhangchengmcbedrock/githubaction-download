@@ -18,11 +18,11 @@ jobs:
 
     - name: Download installers
       run: |
-         curl -o 1.iso "https://ia801504.us.archive.org/12/items/6.2.8220.0.winmain_win8beta.120127-1925_ClientPrerelease_AMD64Fre_en-US_ISO/8220.0.WINMAIN_WIN8BETA.120127-1925_X64FRE_CLIENT_EN-US-HB1_CCS_X64FRE_EN-US_DV5.ISO"
+         curl -o mediawiki-1.35.14.zip "https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.14.zip"
          
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-          name: 1.iso
-          path: 1.iso
+          name: mediawiki-1.35.14.zip
+          path: mediawiki-1.35.14.zip
