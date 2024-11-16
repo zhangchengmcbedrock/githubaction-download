@@ -1,0 +1,34 @@
+name: Download apk
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 16 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  download_installer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download installers
+      run: |
+        curl -o app-release-random.apk "https://api.jb996.cn/files/byakugan/64/app-release-random.apk"
+
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          app-release-random.apk
+        tag_name: latest
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+          name: app-release-random.apk
+          path: app-release-random.apk
